@@ -22,8 +22,14 @@
     "example:dev": "node example/build/dev-server.js",
     "example:build": "node example/build/build.js",
     "example:unit": "cross-env karma start example/test/unit/karma.conf.js --single-run",
-    "example:lint": "tslint -c tslint.json 'example/src'"
+    "example:lint": "tslint -c tslint.json 'example/src'",
+    "postinstall": "mv ./dist/* .; rm -R dist"
   },
+
+  "files": [
+    "dist/*",
+    "tsconfig.json"
+  ],
   "keywords": [
     "vue",
     "vuejs",
